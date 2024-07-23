@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hirdu's GYM</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        font-size: large;
+        font-family: 'PT Serif', serif;
+        color: aquamarine;
+        margin: 0px;
+        padding: 0px;
+        background: url(img/alexander-jawfox-Kl2t5U6Gkm0-unsplash.jpg );
+        background-size: 1600px;
+    }
+    .left{
+        /* border: 2px solid red;  */
+        display: inline-block;
+        top: 50px;
+        left: 25px;
+        position: absolute;
+        text-align: center;
+    }
+    .left div{
+        text-align:center;
+        color: antiquewhite;
+        line-height: 30px;
+        font-size: 22px;
+    }
+    .mid{
+        display: block;
+        width: 45%;
+        margin: 10px auto;
+        /* border: 1px solid rgb(149, 217, 12); */
+    }
+    .right{
+        /* border: 2px solid rgb(235, 13, 209); */
+        display: inline-block;
+        top: 34px;
+        right: 34px;
+        position: absolute;
+    }
+    .navbar{
+        display: inline-block;
+    }
+    .navbar li{
+        font-size: 20px;
+        display: inline-block;
+    }
+    .navbar li a{
+        color: antiquewhite;
+        text-decoration: none;
+        padding: 30px 21px;
+    }
+    .navbar li a:hover, .navbar li a.active{
+        text-decoration: underline;
+        color: aquamarine;
+        font-size: 22px;
+        font-weight: bolder;
+    }
+    .btn{
+        margin: 0px 9px;
+        background-color: rgb(233, 229, 224);
+        color: rgb(9, 6, 1);
+        padding: 4px 14px;
+        border: 2px solid rgb(12, 10, 10);
+        border-radius: 7px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .btn:hover{
+        background-color: aquamarine;
+        font-size: 19px;
+        font-weight: bold;
+    }
+    .container{
+        /* border: 2px solid green; */
+        margin: 203px -239px;
+        padding: 18px 95px;
+        width: 73%;
+        border-radius: 20px;
+    }
+    .container h1{
+        text-align: center;
+    }
+    .container button{
+        display: block;
+        width: 12%;
+        margin: 10px auto;
+        border-radius: 8px;
+        cursor: pointer;
+        text-shadow: 20px;
+        font-size: medium;
+    }
+    .btnn:hover{
+        background-color: aquamarine;
+        color: black;
+        font-size: 20px;
+        font-style: bolder;
+    }
+    .formgroup input{
+        text-align: center;
+        display: block;
+        width: 400px;
+        padding: 1px;
+        border: 2px solid rgb(15, 12, 12);
+        margin: 11px auto;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+    .option{
+        text-align: center;
+        font-size: 26px;
+        color: aquamarine;
+        text-decoration: wavy;
+        position: relative;
+        text-shadow: 4px;
+        font-weight: bolder;
+    }
+    #ts{
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: aquamarine;
+    }
+     #ts:hover{
+        background-color: aquamarine;
+        font-size: 19px;
+        cursor: pointer;
+        color: black;
+    }
+</style>
+<link rel="stylesheet" href="CSS/Style.css">
+<body>
+    <header class="head">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/fitness-logo-template-gym-club-logotype-sportsman-silhouette-character-logo-design-template-design-element-for-logo-poster-card-banner-emblem-t-shirt-illustration-vector.jpg" alt="" width="100px" height="90px">
+            <div>Hirdu's Fitness </div>
+        </div>
+        <!-- box for navigation bar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="https://www.calculator.net/body-fat-calculator.html">Fitness Calculator</a></li>
+                <li><a href="num.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <!-- Right box for buttons -->
+        <div class="right">
+            <a href="searchme.html">
+            <button class="btn">Search</button>
+        </a>
+        <a href="email.html">
+            <button class="btn">Email</button>
+        </a>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the best GYM of Kathmandu today!!!</h1>
+        <form action="backend.php" onsubmit="return myformval()">
+            <div class="formgroup">
+                <input type="text" placeholder="Enter your Name" id="N">
+            </div>
+            <div class="formgroup">
+                <input type="email" placeholder="Enter your Email ID" id="E">
+            </div>
+            <div class="formgroup">
+                <input type="text" placeholder="Enter your Phone Number" id="P">
+            </div>
+            <div class="option">
+                 Training Style: <select id ="ts">
+                    <option value="C">Cardio</option>
+                    <option value="R">Resistance Training</option>
+                    <option value="J">Jumba</option>
+                    <option value="Y">Yoga</option>
+                </select>
+            <button class="btnn">Submit</button>
+        </div>
+            <script>
+                function myformval(){
+                    var a = document.getElementById("N").value;
+                    var b = document.getElementById("ts").value;
+                    var c = document.getElementById("E").value;
+                    var d = document.getElementById("P").value;
+                    if(a == "" || b == "" || c == "" || d == ""){
+                        alert("The fields cannot be null");
+                        return false;
+                    }
+                    else if(b === ""){
+                        alert("This option field should be selected");
+                        return false;
+                    }
+                    else if(isNaN(d)){
+                        alert("The number field cannot be anything else than that of a Number");
+                        return false;
+                    }
+                    else if(d>10 || d<10){
+                        alert("The number field should be of 10 digits only");
+                        return false;
+                    }
+                    else{
+                        return true;
+                   }
+               }
+        </script>
+    </div>
+</body>
+</html>
