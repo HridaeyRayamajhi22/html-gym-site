@@ -1,2 +1,2 @@
-# html-gym-site
-This is my first website, i hope u like my work.
+# Hirdu's Fitness
+This is my first project, i hope u like my work.
